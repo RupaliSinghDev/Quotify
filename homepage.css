@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(16, 15, 15);
+    text-align: center;
+    height: 100vh;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    padding: 70px 0;
+    text-align: center;
+    align-items: center;
+    color: white;
+}
+
+#intro{
+    margin-top: 15vh;
+}
+
+h1{
+    font-size: 150px;
+}
+
+#start button{
+    width: 140px;
+    height: 32px;
+    margin-top: 23vh;
+    border-radius: 20px;
+}
+
+#start a{
+    text-decoration: none;
+    font-size: 22px;
+    padding: 2px;
+    font-weight: bold;
+    color: rgb(85, 20, 145);
+}
+
+#start:hover{
+    background-color: rgb(85, 20, 145);
+    color: wheat;
+    cursor: pointer;
+}
+
+
+
+#contact{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5vh;
+}
+
+#github{
+    font-size: 60px;
+}
+
+.vl{
+    border-left: 3px solid white;
+    height: 60px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#gitid{
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+#gitid a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+#gitid a:hover{
+    transform: translateY(5px);
+}
