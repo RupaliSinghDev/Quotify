@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import Navbar from './Components/Navbar'
-import Home from './Routes/Home'
+import LandingPage from './Components/LandingPage'
 
 
 const page = ({ Component, pageProps }) => {
@@ -9,7 +9,7 @@ const page = ({ Component, pageProps }) => {
     <div>
         <Navbar/>
         {/* <Component {...pageProps} /> */}
-        <Home/>
+        <LandingPage/>
         
     </div>
   )
