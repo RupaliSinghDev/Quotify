@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { RiDoubleQuotesL, RiDoubleQuotesR, RiVolumeUpLine, RiFileCopyLine, RiTwitterXLine } from 'react-icons/ri';
 
-const English = () => {
+const Hindi = () => {
     const [content, setContent] = useState("Good Things Take Time.");
     const [author, setAuthor] = useState("Anonymous");
     const [loading, setLoading] = useState(false);
@@ -13,7 +13,7 @@ const English = () => {
 
     const fetchQuote = () => {
         setLoading(true);
-        fetch("https://quotify-api.vercel.app/quote/hindi/love/random")
+        fetch("https://quotify-api.vercel.app/quote/hindi/inspiration/random")
             .then(res => {
                 if (!res.ok) {
                     throw new Error('Network response was not ok');
@@ -69,4 +69,4 @@ const English = () => {
     );
 };
 
-export default English;
+export default Hindi;

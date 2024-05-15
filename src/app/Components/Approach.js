@@ -43,7 +43,7 @@ const Approach = () => {
         >
           <motion.h1
             variants={textVariants}
-            className='text-[2vw] leading-[3.5vw] tracking-tight text-center' // Centered text
+            className='text-[1.5vw] leading-[3.5vw] tracking-tight text-center' // Centered text
           >
 
             Introducing Quotify: a cutting-edge website featuring a custom-built API for generating quotes in multiple languages. Tailored for seamless performance and integration, Quotify allows users to discover inspirational quotes across cultures effortlessly. Perfect for personal motivation, social media enhancement, and daily wisdom, Quotify brings a world of inspiration to your fingertips.

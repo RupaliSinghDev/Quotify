@@ -1,7 +1,7 @@
 const Footer = () => {
   const teamMembers = [
-    { name: 'Alice Johnson', role: 'Project Manager' },
-    { name: 'Bob Smith', role: 'Lead Developer' },
+    { name: 'Rupali Singh Dev' },
+    { name: 'Tanu Verma' },
     // Add more team members as needed
   ];
 
@@ -12,7 +12,7 @@ const Footer = () => {
         <ul>
           {teamMembers.map((member, index) => (
             <li key={index} className="mb-2">
-              <span className="font-semibold">{member.name}</span> - <span>{member.role}</span>
+              <span className="font-semibold">{member.name}</span>
             </li>
           ))}
         </ul>
