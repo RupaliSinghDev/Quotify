@@ -67,7 +67,7 @@ import Link from 'next/link';
 
 const Navbar = () => {
   return (
-    <nav className="bg-gray-800 py-4">
+    <nav className="bg-gray-800 py-4 sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <div>
@@ -83,7 +83,7 @@ const Navbar = () => {
               <Link href="/about" className="text-white hover:text-gray-300">About
               </Link>
             </li>
-            {/* Add more navigation links here */}
+           
           </ul>
         </div>
       </div>
@@ -91,5 +91,7 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar; 
 
+
+  

@@ -47,13 +47,8 @@ const SelectLang = () => {
     };
 
     return (
-        <div className="relative flex justify-center items-center h-screen overflow-hidden">
-            <button
-                className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-200 px-2 py-1 rounded-md opacity-50 hover:opacity-100"
-                onClick={scrollLeft}
-            >
-                {'<'}
-            </button>
+        <div className="relative flex bg-[#f0f4f8] justify-center items-center h-screen overflow-hidden">
+           
             <div
                 ref={sliderRef}
                 className="flex space-x-4"
@@ -83,14 +78,10 @@ const SelectLang = () => {
                             </div>
                         </Link>
                     </div>
+                    
                 ))}
             </div>
-            <button
-                className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-200 px-2 py-1 rounded-md opacity-50 hover:opacity-100"
-                onClick={scrollRight}
-            >
-                {'>'}
-            </button>
+           
         </div>
     );
 };

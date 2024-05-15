@@ -22,6 +22,15 @@ const textVariants = {
 
 const Approach = () => {
   return (
+    <>
+    <motion.h1 
+     initial='initial'
+     animate='animate'
+     variants={containerVariants}
+    className='text-4xl bg-[#f0f4f8] font-semibold text-center' // Smaller, more balanced text size
+    >
+    Our Approach:
+  </motion.h1>
     <motion.div
       initial='initial'
       animate='animate'
@@ -34,9 +43,10 @@ const Approach = () => {
       >
         <motion.h1
           variants={textVariants}
-          className='text-[3vw] leading-[3.5vw] tracking-tight text-center' // Centered text
+          className='text-[2vw] leading-[3.5vw] tracking-tight text-center' // Centered text
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas dolorem numquam reiciendis esse eveniet amet sed accusantium veritatis ducimus possimus.
+          
+          Introducing Quotify: a cutting-edge website featuring a custom-built API for generating quotes in multiple languages. Tailored for seamless performance and integration, Quotify allows users to discover inspirational quotes across cultures effortlessly. Perfect for personal motivation, social media enhancement, and daily wisdom, Quotify brings a world of inspiration to your fingertips.
         </motion.h1>
 
         <motion.div
@@ -50,11 +60,7 @@ const Approach = () => {
           transition={{ duration: 1, ease: 'easeInOut', delay: 0.6 }}
           className='w-1/2 flex flex-col items-center' // Centered content
         >
-          <motion.h1
-            className='text-6xl font-semibold text-center' // Smaller, more balanced text size
-          >
-            Our Approach:
-          </motion.h1>
+         
 
           <motion.button
             whileHover={{ scale: 1.1, backgroundColor: '#333' }} // Hover effect with scale and color change
@@ -73,6 +79,7 @@ const Approach = () => {
         </motion.div>
       </motion.div>
     </motion.div>
+    </>
   );
 };
 

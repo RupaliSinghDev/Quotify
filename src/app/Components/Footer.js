@@ -66,7 +66,7 @@ const Footer = () => {
           ))}
         </ul>
         <p className="mt-6 text-center text-sm">
-          &copy; {new Date().getFullYear()} My Next.js Project. All rights reserved.
+          &copy; {new Date().getFullYear()} Quotify. All rights reserved.
         </p>
       </div>
     </footer>
