@@ -3,6 +3,7 @@
 import React, { useState, useRef } from 'react';
 import Link from 'next/link';
 
+
 const SelectLang = () => {
     const [hoveredIndex, setHoveredIndex] = useState(null);
     const sliderRef = useRef(null);
@@ -12,7 +13,7 @@ const SelectLang = () => {
             image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTggkafG9hHtUhy2kkivcX1Ib7ueKyLtOcfSq2iLoOnSg&s',
             title: 'Card 1',
             //description: 'Description for Card 1',
-            link: '/card/1',
+            link: '/english',
         },
         {
             image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTggkafG9hHtUhy2kkivcX1Ib7ueKyLtOcfSq2iLoOnSg&s',
