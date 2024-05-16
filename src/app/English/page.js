@@ -39,7 +39,7 @@ const English = () => {
 
     return (
         <div className="flex justify-center items-center h-screen bg-gradient-to-br from-purple-700 to-purple-500">
-            <div className="wrapper bg-white rounded-lg p-8 w-96 md:w-120">
+            <div className="wrapper bg-white rounded-lg p-8 w-110 md:w-120">
                 <header className="text-3xl font-semibold mb-6">Quote of the Day</header>
                 <div className="content">
                     <div className="quote-area flex justify-center items-center mb-6">

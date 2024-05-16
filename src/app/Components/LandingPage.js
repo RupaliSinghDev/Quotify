@@ -35,7 +35,7 @@ const textVariants = {
 
 const LandingPage = () => {
   return (
-    <div className='w-full h-screen bg-slate-100 pt-2'>
+    <div className='w-full h-screen bg-slate-100 pt-2' style={{ backgroundImage: 'url("https://i.giphy.com/fe3zisUnJjbqM.webp")', backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <motion.div
         initial='initial'
         animate='animate'
