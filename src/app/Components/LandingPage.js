@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import React from 'react';
+import Image from '/Assets/Background.svg'
 
 const textContainerVariants = {
   initial: {
@@ -35,7 +36,7 @@ const textVariants = {
 
 const LandingPage = () => {
   return (
-    <div className='w-full h-screen bg-slate-100 pt-2' style={{ backgroundImage: 'url("https://i.giphy.com/fe3zisUnJjbqM.webp")', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <div className='w-full h-screen bg-slate-100 pt-2' style={{ backgroundImage: 'url(${Image})', backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <motion.div
         initial='initial'
         animate='animate'
@@ -44,7 +45,7 @@ const LandingPage = () => {
       >
         <div className='masker'>
           <motion.h1
-            className='text-[8vw] leading-[6vw] tracking-tighter font-bold uppercase'
+            className='text-[8vw] leading-[6vw] tracking-tighter font-bold uppercase text-white'
             variants={textVariants}
           >
             quotify
@@ -56,7 +57,7 @@ const LandingPage = () => {
               initial='initial'
               animate='animate'
               variants={textVariants}
-              className='w-fit flex items-end'
+              className='w-fit flex items-end text-white'
             >
               {index === 0 && (
                 <motion.div
@@ -67,7 +68,7 @@ const LandingPage = () => {
                 ></motion.div>
               )}
               <motion.h1
-                className='text-[5vw] leading-[6.5vw] tracking-tighter font-bold uppercase'
+                className='text-[5vw] leading-[6.5vw] tracking-tighter font-bold uppercase text-white'
               >
                 {item}
               </motion.h1>
