@@ -76,28 +76,6 @@ const Approach = () => {
             </button> */}
           </motion.div>
         </motion.div>
-
-        {/* <motion.div
-          initial='hidden'
-          animate={controls}
-          variants={textVariants}
-          className='flex justify-center mt-10'
-        >
-          <motion.button
-            whileHover={{ scale: 1.1, backgroundColor: '#333' }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: 'spring', stiffness: 300 }}
-            className='flex gap-5 items-center px-10 py-6 bg-gray-700 rounded-full text-white'
-          >
-            Read More
-            <motion.div
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 1.2 }}
-              className='w-3 h-3 bg-white rounded-full'
-            />
-          </motion.button>
-        </motion.div> */}
       </div>
     </>
   );

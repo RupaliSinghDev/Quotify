@@ -6,6 +6,7 @@ import Approach from './Components/Approach'
 import SelectLang from './Components/SelectLang'
 import Footer from './Components/Footer'
 import CardComponent from './Components/Carousal'
+import Explore from './Components/Explore'
 
 
 const page = () => {
@@ -16,6 +17,7 @@ const page = () => {
       <Approach />
       {/* <SelectLang /> */}
       <CardComponent/>
+      <Explore/>
       <Footer />
 
     </div>

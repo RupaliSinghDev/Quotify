@@ -61,7 +61,7 @@ const CardComponent = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <motion.h1
-        className='text-4xl lg:text-6xl font-bold text-center mb-8'
+        className='text-4xl lg:text-6xl font-bold text-center mb-12'
         initial='hidden'
         animate={controls}
         variants={headingVariants}
@@ -69,7 +69,7 @@ const CardComponent = () => {
       >
         How To Use
       </motion.h1>
-      <div className="w-11/12 max-w-screen-lg mx-auto bg-black shadow-md rounded-lg overflow-hidden p-8 mb-8">
+      <div className="w-11/12 max-w-screen-lg mx-auto bg-black shadow-md rounded-lg overflow-hidden p-5 mb-2">
         <motion.div
           className="p-8 flex flex-col items-center" // Center content vertically
           initial='hidden'
@@ -77,8 +77,8 @@ const CardComponent = () => {
           variants={cardVariants}
           ref={ref}
         >
-          <p className="mt-2 text-white text-center">To use the API, copy the link below or read the documentation for more information.</p>
-          <div className="text-blue-500 mt-5 mb-3">Link to copy:</div>
+          <p className="mt-2 mb-8 text-white text-center">To use the API, copy the link below or read the documentation for more information.</p>
+          
           <div className="flex items-center mb-9">
             <input
               type="text"
@@ -100,7 +100,7 @@ const CardComponent = () => {
             transition={{ type: 'spring', stiffness: 300 }}
             className='flex gap-5 items-center px-10 py-6 bg-gray-700 rounded-full text-white'
           >
-            Read More
+            Read Docs
             <motion.div
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}

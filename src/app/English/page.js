@@ -13,7 +13,7 @@ const English = () => {
 
     const fetchQuote = () => {
         setLoading(true);
-        fetch("https://quotify-api.vercel.app/quote/english/inspiration/random")
+        fetch("https://quotify-api.vercel.app/quote/random/english/inspiration")
             .then(res => {
                 if (!res.ok) {
                     throw new Error('Network response was not ok');
