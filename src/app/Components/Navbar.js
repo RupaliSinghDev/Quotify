@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,27 +16,44 @@ const Navbar = () => {
           <Link href="/" className="text-white font-bold text-lg">Quotify</Link>
         </div>
         <div className="block lg:hidden">
-          <button
+          <motion.button
             onClick={toggleMenu}
             className="text-white focus:outline-none"
+            whileTap={{ scale: 0.95 }} // Clicking effect
           >
             <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"} />
             </svg>
-          </button>
+          </motion.button>
         </div>
         <ul className="hidden lg:flex space-x-6">
           <li>
-            <Link href="/" className="text-white hover:text-gray-300">Home</Link>
+            <motion.button
+              whileTap={{ scale: 0.95 }} // Clicking effect
+            >
+              <Link href="/" className="text-white hover:text-gray-300">Home</Link>
+            </motion.button>
           </li>
           <li>
-            <Link href="/Language" className="text-white hover:text-gray-300">Language</Link>
+            <motion.button
+              whileTap={{ scale: 0.95 }} // Clicking effect
+            >
+              <Link href="/Language" className="text-white hover:text-gray-300">Language</Link>
+            </motion.button>
           </li>
           <li>
-            <Link href="/" className="text-white hover:text-gray-300">Docs</Link>
+            <motion.button
+              whileTap={{ scale: 0.95 }} // Clicking effect
+            >
+              <Link href="/" className="text-white hover:text-gray-300">Docs</Link>
+            </motion.button>
           </li>
           <li>
-            <Link href="/" className="text-white hover:text-gray-300">Contact</Link>
+            <motion.button
+              whileTap={{ scale: 0.95 }} // Clicking effect
+            >
+              <Link href="/" className="text-white hover:text-gray-300">Contact</Link>
+            </motion.button>
           </li>
         </ul>
       </div>
@@ -43,13 +61,28 @@ const Navbar = () => {
       <div className={`fixed right-0 top-0 h-full bg-gray-800 w-64 transform transition-transform duration-300 z-50 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <ul className="p-4 space-y-6">
           <li>
-            <Link href="/" className="text-white hover:text-gray-300" onClick={toggleMenu}>Home</Link>
+            <motion.button
+              whileTap={{ scale: 0.95 }} // Clicking effect
+              onClick={toggleMenu}
+            >
+              <Link href="/" className="text-white hover:text-gray-300" >Home</Link>
+            </motion.button>
           </li>
           <li>
-            <Link href="/Language" className="text-white hover:text-gray-300" onClick={toggleMenu}>Language</Link>
+            <motion.button
+              whileTap={{ scale: 0.95 }} // Clicking effect
+              onClick={toggleMenu}
+            >
+              <Link href="/Language" className="text-white hover:text-gray-300" >Language</Link>
+            </motion.button>
           </li>
           <li>
-            <Link href="/" className="text-white hover:text-gray-300" onClick={toggleMenu}>Docs</Link>
+            <motion.button
+              whileTap={{ scale: 0.95 }} // Clicking effect
+              onClick={toggleMenu}
+            >
+              <Link href="/" className="text-white hover:text-gray-300" >Docs</Link>
+            </motion.button>
           </li>
         </ul>
       </div>

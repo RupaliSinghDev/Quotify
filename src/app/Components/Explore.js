@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
@@ -27,6 +27,13 @@ const Explore = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 1, ease: 'easeInOut' } },
   };
 
+  const [clickedCard, setClickedCard] = useState(null);
+
+  const handleClick = (cardName) => {
+    setClickedCard(cardName);
+    // You can add additional logic here when a card is clicked
+  };
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <motion.h1
@@ -45,6 +52,8 @@ const Explore = () => {
           animate={controls}
           variants={cardVariants}
           ref={ref}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => handleClick("English")}
         >
           <a href="/English" className="bg-white shadow-md rounded-lg overflow-hidden h-full group hover:opacity-80 transition-opacity duration-300">
             <img src="https://i.pinimg.com/736x/5e/c3/3f/5ec33f40c8c195d08c425d27663256f4.jpg" alt="Large Card" className="w-full h-full object-cover" />
@@ -60,6 +69,8 @@ const Explore = () => {
             animate={controls}
             variants={cardVariants}
             ref={ref}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => handleClick("Hindi")}
           >
             <a href="/Hindi" className="bg-white shadow-md rounded-lg overflow-hidden h-full group hover:opacity-80 transition-opacity duration-300">
               <img src="https://www.devvratyoga.com/wp-content/uploads/2022/09/Bhagvad-Gita.png" alt="Small Card 1" className="w-full h-full object-cover" />
@@ -74,6 +85,8 @@ const Explore = () => {
             animate={controls}
             variants={cardVariants}
             ref={ref}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => handleClick("Japanese")}
           >
             <a href="/Japanese" className="bg-white shadow-md rounded-lg overflow-hidden h-full group hover:opacity-80 transition-opacity duration-300">
               <img src="https://stability-images-upload.s3.amazonaws.com/v1_txt2img_9397da60-9430-4300-8255-d3fb4e62757e.png" alt="Small Card 2" className="w-full h-full object-cover" />

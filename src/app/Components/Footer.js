@@ -7,8 +7,8 @@ const Footer = () => {
 
   return (
     <footer className="bg-gray-800 text-white py-6">
-      <div className="container mx-auto px-4">
-        <h2 className="text-lg font-bold mb-4">Project Team</h2>
+      <div className="container mx-auto px-4 text-center"> {/* Center align content */}
+        <h2 className="text-lg font-bold mb-4">Design and Developed By:</h2>
         <ul>
           {teamMembers.map((member, index) => (
             <li key={index} className="mb-2">
@@ -16,7 +16,7 @@ const Footer = () => {
             </li>
           ))}
         </ul>
-        <p className="mt-6 text-center text-sm">
+        <p className="mt-6 text-sm">
           &copy; {new Date().getFullYear()} Quotify. All rights reserved.
         </p>
       </div>
@@ -25,4 +25,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
