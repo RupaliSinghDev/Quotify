@@ -1,84 +1,104 @@
-import { motion } from 'framer-motion';
-import React from 'react';
-
-// Variants for staggered animation of child elements
-const containerVariants = {
-  initial: { opacity: 0, y: 20 },
-  animate: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      staggerChildren: 0.3, // Staggering child animations
-      duration: 1,
-      ease: 'easeInOut',
-    },
-  },
-};
+import { motion, useAnimation } from 'framer-motion';
+import React, { useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 const textVariants = {
-  initial: { opacity: 0, x: -50 },
-  animate: { opacity: 1, x: 0 },
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 1, ease: 'easeInOut' } },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, x: 50 },
+  visible: { opacity: 1, x: 0, transition: { duration: 1, ease: 'easeInOut' } },
+};
+
+const headingVariants = {
+  hidden: { opacity: 0, y: -20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 1, ease: 'easeInOut' } },
 };
 
 const Approach = () => {
+  const controls = useAnimation();
+  const { ref, inView } = useInView({
+    triggerOnce: false, // Trigger animations every time the element comes into view
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    } else {
+      controls.start('hidden');
+    }
+  }, [controls, inView]);
+
   return (
     <>
       <motion.h1
-        initial='initial'
-        animate='animate'
-        variants={containerVariants}
-        className='text-4xl bg-[#f0f4f8] font-semibold text-center' // Smaller, more balanced text size
+        className='text-4xl lg:text-6xl bg-[#f0f4f8] font-bold text-center mt-20 mb-8'
+        initial='hidden'
+        animate={controls}
+        variants={headingVariants}
       >
         Our Approach:
       </motion.h1>
-      <motion.div
-        initial='initial'
-        animate='animate'
-        variants={containerVariants}
-        className='w-full py-20 bg-[#f0f4f8] text-gray-800' // Light background, dark text
+      <div
+        ref={ref}
+        className='relative w-full py-20 bg-[#f0f4f8] text-gray-800 overflow-x-hidden' // Ensure no horizontal overflow
       >
         <motion.div
-          className='flex flex-col items-center justify-center' // Centering content
-          variants={containerVariants}
+          className='flex flex-col lg:flex-row justify-between items-center lg:items-start w-full px-4 lg:px-0' // Adjust to flex column for smaller screens
+          initial='hidden'
+          animate={controls}
+          variants={textVariants}
         >
-          <motion.h1
+          <motion.div
             variants={textVariants}
-            className='text-[1.5vw] leading-[3.5vw] tracking-tight text-center' // Centered text
+            className='text-[5vw] lg:text-[1.5vw] leading-[7vw] lg:leading-[3.5vw] tracking-tight font-serif ml-7 lg:pl-8 lg:w-1/2 mb-8 lg:mb-0' // Adjust text size for responsiveness
           >
-
             Introducing Quotify: a cutting-edge website featuring a custom-built API for generating quotes in multiple languages. Tailored for seamless performance and integration, Quotify allows users to discover inspirational quotes across cultures effortlessly. Perfect for personal motivation, social media enhancement, and daily wisdom, Quotify brings a world of inspiration to your fingertips.
-          </motion.h1>
+          </motion.div>
 
           <motion.div
-            variants={textVariants}
-            transition={{ duration: 1, ease: 'easeInOut', delay: 0.5 }}
-            className='w-full border-t-[2px] pt-10 mt-20 border-gray-500' // Slightly thicker border
-          />
-
-          <motion.div
-            variants={textVariants}
-            transition={{ duration: 1, ease: 'easeInOut', delay: 0.6 }}
-            className='w-1/2 flex flex-col items-center' // Centered content
+            className='bg-gray-800 shadow-lg rounded-lg p-2 w-3/4 lg:w-1/4 mx-auto lg:mr-12 flex flex-col items-center' // Adjust width and margin for responsiveness
+            initial='hidden'
+            animate={controls}
+            variants={cardVariants}
           >
-
-
-            <motion.button
-              whileHover={{ scale: 1.1, backgroundColor: '#333' }} // Hover effect with scale and color change
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: 'spring', stiffness: 300 }}
-              className='flex gap-5 items-center px-10 py-6 mt-10 bg-gray-700 rounded-full text-white' // Darker button color
-            >
-              Read More
-              <motion.div
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 1.2 }}
-                className='w-3 h-3 bg-white rounded-full' // White dot on button
-              />
-            </motion.button>
+            <img
+              src='https://via.placeholder.com/150' // Replace with your image source
+              alt='Special Offer'
+              className='w-full h-auto rounded-lg mb-1'
+            />
+            {/* <h2 className='text-xl font-bold mb-4'>Special Offer</h2>
+            <p className='text-gray-700 text-center'>Subscribe now and get a 20% discount on your first month!</p>
+            <button className='mt-4 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition-colors'>
+              Learn More
+            </button> */}
           </motion.div>
         </motion.div>
-      </motion.div>
+
+        {/* <motion.div
+          initial='hidden'
+          animate={controls}
+          variants={textVariants}
+          className='flex justify-center mt-10'
+        >
+          <motion.button
+            whileHover={{ scale: 1.1, backgroundColor: '#333' }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: 'spring', stiffness: 300 }}
+            className='flex gap-5 items-center px-10 py-6 bg-gray-700 rounded-full text-white'
+          >
+            Read More
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 1.2 }}
+              className='w-3 h-3 bg-white rounded-full'
+            />
+          </motion.button>
+        </motion.div> */}
+      </div>
     </>
   );
 };

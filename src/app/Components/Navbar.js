@@ -1,33 +1,60 @@
-import React from 'react'
+import React, { useState } from 'react';
 import Link from 'next/link';
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <nav className="bg-gray-800 py-4 sticky top-0 z-50">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center">
-          <div>
-            <Link href="/" className="text-white font-bold text-lg">Quotify
-            </Link>
-          </div>
-          <ul className="flex">
-            <li className="ml-6">
-              <Link href="/" className="text-white hover:text-gray-300">Home
-              </Link>
-            </li>
-            <li className="ml-6">
-              <Link href="/Language" className="text-white hover:text-gray-300">Language
-              </Link>
-            </li>
-           
-          </ul>
+      <div className="container mx-auto px-4 flex justify-between items-center">
+        <div>
+          <Link href="/" className="text-white font-bold text-lg">Quotify</Link>
         </div>
+        <div className="block lg:hidden">
+          <button
+            onClick={toggleMenu}
+            className="text-white focus:outline-none"
+          >
+            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"} />
+            </svg>
+          </button>
+        </div>
+        <ul className="hidden lg:flex space-x-6">
+          <li>
+            <Link href="/" className="text-white hover:text-gray-300">Home</Link>
+          </li>
+          <li>
+            <Link href="/Language" className="text-white hover:text-gray-300">Language</Link>
+          </li>
+          <li>
+            <Link href="/" className="text-white hover:text-gray-300">Docs</Link>
+          </li>
+          <li>
+            <Link href="/" className="text-white hover:text-gray-300">Contact</Link>
+          </li>
+        </ul>
+      </div>
+      <div className={`fixed inset-0 bg-gray-900 bg-opacity-50 z-40 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} onClick={toggleMenu}></div>
+      <div className={`fixed right-0 top-0 h-full bg-gray-800 w-64 transform transition-transform duration-300 z-50 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <ul className="p-4 space-y-6">
+          <li>
+            <Link href="/" className="text-white hover:text-gray-300" onClick={toggleMenu}>Home</Link>
+          </li>
+          <li>
+            <Link href="/Language" className="text-white hover:text-gray-300" onClick={toggleMenu}>Language</Link>
+          </li>
+          <li>
+            <Link href="/" className="text-white hover:text-gray-300" onClick={toggleMenu}>Docs</Link>
+          </li>
+        </ul>
       </div>
     </nav>
   );
 };
 
-export default Navbar; 
-
-
-  
+export default Navbar;

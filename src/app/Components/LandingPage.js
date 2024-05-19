@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import React from 'react';
-import Image from '/Assets/Background.svg'
 
 const textContainerVariants = {
   initial: {
@@ -36,7 +35,7 @@ const textVariants = {
 
 const LandingPage = () => {
   return (
-    <div className='w-full h-screen bg-slate-100 pt-2' style={{ backgroundImage: 'url(${Image})', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <div className='w-full h-screen bg-slate-100 pt-2' style={{ backgroundImage: 'url("https://png.pngtree.com/thumb_back/fh260/background/20230612/pngtree-man-on-a-mountain-starry-sky-wallpaper-for-mobile-image_2936450.jpg")', backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <motion.div
         initial='initial'
         animate='animate'
@@ -57,7 +56,7 @@ const LandingPage = () => {
               initial='initial'
               animate='animate'
               variants={textVariants}
-              className='w-fit flex items-end text-white'
+              className='w-fit flex items-end'
             >
               {index === 0 && (
                 <motion.div
