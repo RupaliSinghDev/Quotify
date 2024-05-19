@@ -47,7 +47,7 @@ const Explore = () => {
           ref={ref}
         >
           <a href="/English" className="bg-white shadow-md rounded-lg overflow-hidden h-full group hover:opacity-80 transition-opacity duration-300">
-            <img src="/public/BackgroundImg.svg" alt="Large Card" className="w-full h-full object-cover" />
+            <img src="https://i.pinimg.com/736x/5e/c3/3f/5ec33f40c8c195d08c425d27663256f4.jpg" alt="Large Card" className="w-full h-full object-cover" />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-60 text-white text-6xl font-bold">
               English
             </div>
