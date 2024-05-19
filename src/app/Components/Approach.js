@@ -34,7 +34,7 @@ const Approach = () => {
   return (
     <>
       <motion.h1
-        className='text-4xl lg:text-6xl bg-[#f0f4f8] font-bold text-center mt-20 mb-8'
+        className='text-4xl lg:text-6xl bg-[#7c8894] font-bold text-center mt-20 mb-8 font-mono tracking-tighter'
         initial='hidden'
         animate={controls}
         variants={headingVariants}
@@ -43,7 +43,7 @@ const Approach = () => {
       </motion.h1>
       <div
         ref={ref}
-        className='relative w-full py-20 bg-[#f0f4f8] text-gray-800 overflow-x-hidden' // Ensure no horizontal overflow
+        className='relative w-full py-20 bg-[#7c8894] text-gray-800 overflow-x-hidden' // Ensure no horizontal overflow
       >
         <motion.div
           className='flex flex-col lg:flex-row justify-between items-center lg:items-start w-full px-4 lg:px-0' // Adjust to flex column for smaller screens

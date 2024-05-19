@@ -11,7 +11,7 @@ import Explore from './Components/Explore'
 
 const page = () => {
   return (
-    <div>
+    <div className='bg-[#7c8894]'>
       <Navbar />
       <LandingPage />
       <Approach />

@@ -35,7 +35,7 @@ const textVariants = {
 
 const LandingPage = () => {
   return (
-    <div className='w-full h-screen bg-slate-100 pt-2' style={{ backgroundImage: 'url("/Background.png")', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <div className='w-full h-screen bg-slate-500 pt-2' style={{ backgroundImage: 'url("/Background.png")', backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <motion.div
         initial='initial'
         animate='animate'
@@ -67,7 +67,7 @@ const LandingPage = () => {
                 ></motion.div>
               )}
               <motion.h1
-                className='text-[5vw] leading-[6.5vw] tracking-tighter font-bold uppercase text-white'
+                className='text-[5vw] leading-[6.5vw] tracking-tighter semi-bold font-momo text-white'
               >
                 {item}
               </motion.h1>
@@ -75,14 +75,7 @@ const LandingPage = () => {
           </div>
         ))}
       </motion.div>
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1, duration: 1 }}
-        className='border-t-[1px] border-zinc-800 mt-28'
-      >
-       
-      </motion.div>
+      
     </div>
   );
 };

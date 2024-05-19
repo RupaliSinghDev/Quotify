@@ -49,7 +49,7 @@ const CardComponent = () => {
 
   // Function to handle copying the link to the clipboard
   const copyLinkToClipboard = () => {
-    const link = 'quotify-api.vercel.app/'; // Replace with your desired link
+    const link = 'quotify-api.vercel.app/'; 
     navigator.clipboard.writeText(link)
       .then(() => {
         setCopied(true);
@@ -69,7 +69,7 @@ const CardComponent = () => {
       >
         How To Use
       </motion.h1>
-      <div className="w-11/12 max-w-screen-lg mx-auto bg-black shadow-md rounded-lg overflow-hidden p-5 mb-2">
+      <div className="w-11/12 max-w-screen-lg mx-auto bg-slate-900 shadow-md rounded-lg overflow-hidden p-5 mb-2">
         <motion.div
           className="p-8 flex flex-col items-center" // Center content vertically
           initial='hidden'
