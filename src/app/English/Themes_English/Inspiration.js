@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { RiDoubleQuotesL, RiDoubleQuotesR, RiVolumeUpLine, RiFileCopyLine, RiTwitterXLine } from 'react-icons/ri';
 
-const Japanese = () => {
+const Hindi = () => {
     const [content, setContent] = useState("Good Things Take Time.");
     const [author, setAuthor] = useState("Anonymous");
     const [loading, setLoading] = useState(false);
@@ -13,7 +13,7 @@ const Japanese = () => {
 
     const fetchQuote = () => {
         setLoading(true);
-        fetch("https://quotify-api.vercel.app/quote/random/Japanese/anime")
+        fetch("https://quotify-api.vercel.app/quote/random/english/love")
             .then(res => {
                 if (!res.ok) {
                     throw new Error('Network response was not ok');
@@ -38,7 +38,7 @@ const Japanese = () => {
     };
 
     return (
-        <div className="flex justify-center items-center h-screen" style={{backgroundImage: 'url(https://wallpapercave.com/wp/wp11917294.png)', backgroundSize: 'cover'}}>
+        <div className="flex justify-center items-center h-screen bg-gradient-to-br from-purple-700 to-purple-500">
             <div className="wrapper bg-white rounded-lg p-8 w-96 md:w-120">
                 <header className="text-3xl font-semibold mb-6">Quote of the Day</header>
                 <div className="content">
@@ -69,4 +69,4 @@ const Japanese = () => {
     );
 };
 
-export default Japanese;
+export default Hindi;

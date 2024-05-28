@@ -19,7 +19,7 @@ const Explore = () => {
 
   const headingVariants = {
     hidden: { opacity: 0, y: -20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 1, ease: 'easeInOut' } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeInOut' } },
   };
 
   const cardVariants = {
@@ -35,7 +35,7 @@ const Explore = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-[#f0f4f8]">
       <motion.h1
         className="text-4xl lg:text-6xl font-bold text-center mb-16"
         initial="hidden"
@@ -56,7 +56,7 @@ const Explore = () => {
           onClick={() => handleClick("English")}
         >
           <a href="/English" className="bg-white shadow-md rounded-lg overflow-hidden h-full group hover:opacity-80 transition-opacity duration-300">
-            <img src="https://i.pinimg.com/736x/5e/c3/3f/5ec33f40c8c195d08c425d27663256f4.jpg" alt="Large Card" className="w-full h-full object-cover" />
+            <img src="/English.jpg" alt="Large Card" className="w-full h-full object-cover" />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-60 text-white text-6xl font-bold">
               English
             </div>
@@ -73,7 +73,7 @@ const Explore = () => {
             onClick={() => handleClick("Hindi")}
           >
             <a href="/Hindi" className="bg-white shadow-md rounded-lg overflow-hidden h-full group hover:opacity-80 transition-opacity duration-300">
-              <img src="https://www.devvratyoga.com/wp-content/uploads/2022/09/Bhagvad-Gita.png" alt="Small Card 1" className="w-full h-full object-cover" />
+              <img src="/Bhagvad-Gita.png" alt="Small Card 1" className="w-full h-full object-cover" />
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-60 text-white text-6xl font-bold">
                 Hindi
               </div>
@@ -89,7 +89,7 @@ const Explore = () => {
             onClick={() => handleClick("Japanese")}
           >
             <a href="/Japanese" className="bg-white shadow-md rounded-lg overflow-hidden h-full group hover:opacity-80 transition-opacity duration-300">
-              <img src="https://stability-images-upload.s3.amazonaws.com/v1_txt2img_9397da60-9430-4300-8255-d3fb4e62757e.png" alt="Small Card 2" className="w-full h-full object-cover" />
+              <img src="/Japanese.png" alt="Small Card 2" className="w-full h-full object-cover" />
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-60 text-white text-6xl font-bold">
                 Japanese
               </div>

@@ -1,72 +1,45 @@
+// src/PhotoGallery.js
 "use client"
-import React, { useState, useEffect } from 'react';
-import { RiDoubleQuotesL, RiDoubleQuotesR, RiVolumeUpLine, RiFileCopyLine, RiTwitterXLine } from 'react-icons/ri';
+import React from 'react';
+import Navbar from '../Components/Navbar';
 
-const English = () => {
-    const [content, setContent] = useState("Good Things Take Time.");
-    const [author, setAuthor] = useState("Anonymous");
-    const [loading, setLoading] = useState(false);
+const Language = () => {
+  const photos = [
+    { src: '/English.jpg', alt: 'Photo 1', desc: 'English', link: '/English/Themes_English/Inspiration.js' },
+    { src: '/Bhagvad-Gita.png', alt: 'Photo 2', desc: 'Hindi', link: '/Hindi' },
+    { src: '/Japanese.png', alt: 'Photo 3', desc: 'Japanese', link: '/Japanese' },
+    { src: 'https://via.placeholder.com/200', alt: 'Photo 4', desc: 'English', link: '' },
+    { src: 'https://via.placeholder.com/200', alt: 'Photo 5', desc: 'English', link: '' },
+    { src: 'https://via.placeholder.com/200', alt: 'Photo 6', desc: 'English', link: '' }
+  ];
 
-    useEffect(() => {
-        fetchQuote();
-    }, []);
+  return (
+    <div className="min-h-screen bg-[#f0f4f8] flex flex-col items-center">
+      <nav className="w-full">
+        <Navbar />
+      </nav>
 
-    const fetchQuote = () => {
-        setLoading(true);
-        fetch("https://quotify-api.vercel.app/quote/random/english/inspiration")
-            .then(res => {
-                if (!res.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return res.json();
-            })
-            .then(result => {
-                setContent(result.content);
-                setAuthor(result.author);
-                setLoading(false);
-            })
-            .catch(error => {
-                console.error('Error fetching quote:', error);
-                setLoading(false);
-            });
-    };
-    
-
-    const readQuote = () => {
-        let utterance = new SpeechSynthesisUtterance(content);
-        speechSynthesis.speak(utterance);
-    };
-
-    return (
-        <div className="flex justify-center items-center h-screen bg-gradient-to-br from-purple-700 to-purple-500">
-            <div className="wrapper bg-white rounded-lg p-8 w-110 md:w-120">
-                <header className="text-3xl font-semibold mb-6">Quote of the Day</header>
-                <div className="content">
-                    <div className="quote-area flex justify-center items-center mb-6">
-                        <RiDoubleQuotesL className="text-xl mr-2" />
-                        <p className="quote text-lg text-center">{content}</p>
-                        <RiDoubleQuotesR className="text-xl ml-2" />
-                    </div>
-                    <div className="author flex justify-end italic text-lg">
-                        <span className="font-mono">__</span>
-                        <span className="name">{author}</span>
-                    </div>
-                </div>
-                <div className="button border-t border-black mt-5">
-                    <div className="features flex items-center justify-between mt-5">
-                        <ul className="flex">
-                            <li className="sound list-none m-0 p-0 h-12 w-12 flex items-center justify-center text-purple-500 border-2 border-purple-500 rounded-full cursor-pointer transition duration-300 hover:text-white hover:bg-purple-500" onClick={readQuote}><RiVolumeUpLine /></li>
-                            <li className="copy list-none m-0 p-0 h-12 w-12 flex items-center justify-center text-purple-500 border-2 border-purple-500 rounded-full cursor-pointer transition duration-300 hover:text-white hover:bg-purple-500"><RiFileCopyLine /></li>
-                            <li className="X list-none m-0 p-0 h-12 w-12 flex items-center justify-center text-purple-500 border-2 border-purple-500 rounded-full cursor-pointer transition duration-300 hover:text-white hover:bg-purple-500"><RiTwitterXLine /></li>
-                        </ul>
-                        <button className={`p-3 rounded-full text-white cursor-pointer text-lg ${loading ? 'bg-purple-300' : 'bg-purple-500'} hover:bg-purple-600`} onClick={fetchQuote} disabled={loading}>
-                            {loading ? 'Loading...' : 'New Quote'}
-                        </button>
-                    </div>
-                </div>
-            </div>
+      <header className="w-full text-black p-4 mt-6 mb-6">
+        <h1 className="text-center text-6xl font-bold">Themes for you</h1>
+      </header>
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {photos.map((photo, index) => (
+            <a 
+              key={index} 
+              href={photo.link} 
+              className="w-80 h-80 relative rounded shadow-lg cursor-pointer block"
+            >
+              <img src={photo.src} alt={photo.alt} className="object-cover w-full h-full" />
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100 bg-black bg-opacity-50 text-white text-4xl font-bold">
+                {photo.desc}
+              </div>
+            </a>
+          ))}
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
-export default English;
+export default Language;
