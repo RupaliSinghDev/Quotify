@@ -61,7 +61,7 @@ const CardComponent = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-[#f0f4f8]">
       <motion.h1
-        className='text-4xl lg:text-6xl font-bold text-center mb-12'
+        className='text-4xl font-mono lg:text-6xl font-bold text-center mb-12'
         initial='hidden'
         animate={controls}
         variants={headingVariants}
@@ -69,9 +69,9 @@ const CardComponent = () => {
       >
         How To Use
       </motion.h1>
-      <div className="w-11/12 max-w-screen-lg mx-auto bg-slate-900 shadow-md rounded-lg overflow-hidden p-5 mb-2">
+      <div className="w-11/12 max-w-screen-lg mx-auto bg-black shadow-md rounded-lg overflow-hidden p-5 mb-2">
         <motion.div
-          className="p-8 flex flex-col items-center" // Center content vertically
+          className="p-8 flex flex-col items-center"
           initial='hidden'
           animate={controls}
           variants={cardVariants}
@@ -83,7 +83,7 @@ const CardComponent = () => {
             <input
               type="text"
               readOnly
-              value="quotify-api.vercel.app/" // Replace with your desired link
+              value="quotify-api.vercel.app/"
               className="bg-gray-200 px-2 py-1 rounded-md text-sm mr-2"
             />
             <button
@@ -94,7 +94,10 @@ const CardComponent = () => {
             </button>
           </div>
           {showCopyMessage && <div className="text-green-500">Link copied successfully!</div>}
-          <motion.button
+          <motion.a
+            href="https://rupalisinghdev-organization.gitbook.io/quotify_api/"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.1, backgroundColor: '#333' }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: 'spring', stiffness: 300 }}
@@ -107,7 +110,7 @@ const CardComponent = () => {
               transition={{ duration: 0.6, delay: 1.2 }}
               className='w-3 h-3 bg-white rounded-full'
             />
-          </motion.button>
+          </motion.a>
         </motion.div>
       </div>
     </div>

@@ -45,14 +45,14 @@ const Navbar = () => {
             <motion.button
               whileTap={{ scale: 0.95 }} // Clicking effect
             >
-              <Link href="/" className="text-white hover:text-gray-300">Docs</Link>
+              <Link href="https://rupalisinghdev-organization.gitbook.io/quotify_api/" className="text-white hover:text-gray-300">Docs</Link>
             </motion.button>
           </li>
           <li>
             <motion.button
               whileTap={{ scale: 0.95 }} // Clicking effect
             >
-              <Link href="/" className="text-white hover:text-gray-300">Contact</Link>
+              <Link href="/Contact" className="text-white hover:text-gray-300">Contact</Link>
             </motion.button>
           </li>
         </ul>
@@ -81,7 +81,15 @@ const Navbar = () => {
               whileTap={{ scale: 0.95 }} // Clicking effect
               onClick={toggleMenu}
             >
-              <Link href="/" className="text-white hover:text-gray-300" >Docs</Link>
+              <Link href="https://rupalisinghdev-organization.gitbook.io/quotify_api/" className="text-white hover:text-gray-300" >Docs</Link>
+            </motion.button>
+          </li>
+          <li>
+            <motion.button
+              whileTap={{ scale: 0.95 }} // Clicking effect
+              onClick={toggleMenu}
+            >
+              <Link href="/Contact" className="text-white hover:text-gray-300" >Contact</Link>
             </motion.button>
           </li>
         </ul>

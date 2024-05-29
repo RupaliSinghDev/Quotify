@@ -6,7 +6,7 @@ import Approach from './Components/Approach'
 import Footer from './Components/Footer'
 import CardComponent from './Components/Carousal'
 import Explore from './Components/Explore'
-import ContactForm from './Components/ContactForm'
+
 
 
 
@@ -18,7 +18,6 @@ const page = () => {
       <Approach />
       <CardComponent/>
       <Explore/>
-      <ContactForm/>
       <Footer />
       
 

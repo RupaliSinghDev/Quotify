@@ -37,7 +37,7 @@ const Explore = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-[#f0f4f8]">
       <motion.h1
-        className="text-4xl lg:text-6xl font-bold text-center mb-16"
+        className="text-4xl font-mono lg:text-6xl font-bold text-center mb-16"
         initial="hidden"
         animate={controls}
         variants={headingVariants}
@@ -73,7 +73,7 @@ const Explore = () => {
             onClick={() => handleClick("Hindi")}
           >
             <a href="/Hindi" className="bg-white shadow-md rounded-lg overflow-hidden h-full group hover:opacity-80 transition-opacity duration-300">
-              <img src="/Bhagvad-Gita.png" alt="Small Card 1" className="w-full h-full object-cover" />
+              <img src="/Bhagvad-Gita_cp.png" alt="Small Card 1" className="w-full h-full object-cover" />
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-60 text-white text-6xl font-bold">
                 Hindi
               </div>
