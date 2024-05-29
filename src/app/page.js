@@ -6,16 +6,18 @@ import Approach from './Components/Approach'
 import Footer from './Components/Footer'
 import CardComponent from './Components/Carousal'
 import Explore from './Components/Explore'
+import KeyFeatures from './Components/Features'
 
 
 
 
 const page = () => {
   return (
-    <div className='bg-[#7c8894]'>
+    <div className='bg-[#837b9e]'>
       <Navbar />
       <LandingPage />
       <Approach />
+      <KeyFeatures/>
       <CardComponent/>
       <Explore/>
       <Footer />

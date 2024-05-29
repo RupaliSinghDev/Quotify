@@ -35,7 +35,7 @@ const Explore = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-[#f0f4f8]">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-[#837b9e]">
       <motion.h1
         className="text-4xl font-mono lg:text-6xl font-bold text-center mb-16"
         initial="hidden"
