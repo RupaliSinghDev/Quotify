@@ -1,93 +1,49 @@
+// src/PhotoGallery.js
 "use client"
-import React, { useState, useRef } from 'react';
-import Link from 'next/link';
+import React from 'react';
+import Navbar from '../Components/Navbar';
 
 const Language = () => {
-    const [hoveredIndex, setHoveredIndex] = useState(null);
-    const sliderRef = useRef(null);
+  const photos = [
+    { src: '/English.jpg', alt: 'Photo 1', desc: 'English', link: '/English' },
+    { src: '/Bhagvad-Gita.png', alt: 'Photo 2', desc: 'Hindi', link: '/Hindi'},
+    { src: '/Japanese.png', alt: 'Photo 3', desc: 'Japanese', link: '/Japanese' },
+    { src: 'https://via.placeholder.com/200', alt: 'Photo 4', desc: 'English', link: '' },
+    { src: 'https://via.placeholder.com/200', alt: 'Photo 5', desc: 'English', link: '' },
+    { src: 'https://via.placeholder.com/200', alt: 'Photo 6', desc: 'English', link: '' }
+  ];
 
-    const cards = [
-        {
-            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTggkafG9hHtUhy2kkivcX1Ib7ueKyLtOcfSq2iLoOnSg&s',
-            title: 'English',
-            link: '/English',
-        },
-        {
-            image: 'https://www.devvratyoga.com/wp-content/uploads/2022/09/Bhagvad-Gita.png',
-            title: 'Hindi',
-            link: '/Hindi',
-        },
-        {
-            image: 'https://stability-images-upload.s3.amazonaws.com/v1_txt2img_9397da60-9430-4300-8255-d3fb4e62757e.png',
-            title: 'Japanese',
-            link: '/Japanese',
-        },
-    ];
+  const handleClick = (link) => {
+    window.location.href = link;
+  };
 
-    const scrollLeft = () => {
-        if (sliderRef.current) {
-            sliderRef.current.scrollBy({
-                left: -350, // Adjust the value based on your card width
-                behavior: 'smooth',
-            });
-        }
-    };
+  return (
+    <div className="min-h-screen bg-[#f0f4f8] flex flex-col items-center">
+      <nav className="w-full">
+        <Navbar />
+      </nav>
 
-    const scrollRight = () => {
-        if (sliderRef.current) {
-            sliderRef.current.scrollBy({
-                left: 350, // Adjust the value based on your card width
-                behavior: 'smooth',
-            });
-        }
-    };
-
-    return (
-        <div className="relative flex bg-[#f0f4f8] justify-center items-center h-screen overflow-hidden">
-            <button
-                className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-200 px-2 py-1 rounded-md opacity-50 hover:opacity-100"
-                onClick={scrollLeft}
+      <header className="w-full text-black p-4 mt-6 mb-6">
+        <h1 className="text-center text-6xl font-bold">Echoes Across Language</h1>
+      </header>
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {photos.map((photo, index) => (
+            <div 
+              key={index} 
+              className="w-80 h-80 relative rounded shadow-lg cursor-pointer" 
+              onClick={() => handleClick(photo.link)}
             >
-                {'<'}
-            </button>
-            <div
-                ref={sliderRef}
-                className="flex space-x-4"
-                style={{ scrollSnapType: 'x mandatory' }}
-            >
-                {cards.map((card, index) => (
-                    <div
-                        key={index}
-                        className="relative flex-shrink-0 w-96 h-72 transition-transform transform hover:scale-105"
-                        onMouseEnter={() => setHoveredIndex(index)}
-                        onMouseLeave={() => setHoveredIndex(null)}
-                    >
-                        <Link key={card.id} href={card.link}>
-                            <img
-                                src={card.image}
-                                alt={card.title}
-                                className="w-full h-full rounded-lg object-cover"
-                            />
-                            {hoveredIndex === index && (
-                                <button className="absolute inset-0 flex items-center justify-center w-full h-full bg-black bg-opacity-50 text-white opacity-0 hover:opacity-100 transition-opacity duration-300">
-                                    Show More
-                                </button>
-                            )}
-                            <div className="p-4">
-                                <h3 className="text-lg font-semibold mb-2">{card.title}</h3>
-                            </div>
-                        </Link>
-                    </div>
-                ))}
+              <img src={photo.src} alt={photo.alt} className="object-cover w-full h-full" />
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100 bg-black bg-opacity-50 text-white text-4xl font-bold">
+                {photo.desc}
+              </div>
             </div>
-            <button
-                className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-200 px-2 py-1 rounded-md opacity-50 hover:opacity-100"
-                onClick={scrollRight}
-            >
-                {'>'}
-            </button>
+          ))}
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Language;

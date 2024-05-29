@@ -3,7 +3,6 @@ import React from 'react'
 import Navbar from './Components/Navbar'
 import LandingPage from './Components/LandingPage'
 import Approach from './Components/Approach'
-import SelectLang from './Components/SelectLang'
 import Footer from './Components/Footer'
 import CardComponent from './Components/Carousal'
 import Explore from './Components/Explore'
@@ -17,7 +16,6 @@ const page = () => {
       <Navbar />
       <LandingPage />
       <Approach />
-      {/* <SelectLang /> */}
       <CardComponent/>
       <Explore/>
       <ContactForm/>

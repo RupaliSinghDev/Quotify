@@ -59,7 +59,7 @@ const CardComponent = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-[#f0f4f8]">
       <motion.h1
         className='text-4xl lg:text-6xl font-bold text-center mb-12'
         initial='hidden'
