@@ -8,12 +8,12 @@ const English = () => {
     { src: '/Ins_CP.jpg', alt: 'Inspiration', desc: 'Inspiration', link: '/English/Inspiration' },
     { src: '/Love_cp.jpg', alt: 'Love', desc: 'Love', link: '/English/Love' },
     { src: '/nature_cp.jpg', alt: 'Nature and Harmony', desc: 'Nature', link: '/English/Nature-and-harmony' },
-    { src: 'https://via.placeholder.com/200', alt: 'Friendship', desc: 'Friendship', link: '/English/Friendship' },
-    { src: 'https://via.placeholder.com/200', alt: 'Success', desc: 'Success', link: '/English/Success' },
-    { src: 'https://via.placeholder.com/200', alt: 'Happiness', desc: 'Happiness', link: '/English/Happiness' },
-    { src: 'https://via.placeholder.com/200', alt: 'Wisdom and Knowledge', desc: 'Wisdom', link: '/English/Wisdom-and-knowledge' },
-    { src: 'https://via.placeholder.com/200', alt: 'Life', desc: 'Life', link: '/English/Life' },
-    { src: 'https://via.placeholder.com/200', alt: 'Peace and Solitude', desc: 'Peace', link: '/English/Peace-and-solitude' },
+    { src: '/friends_cp.png', alt: 'Friendship', desc: 'Friendship', link: '/English/Friendship' },
+    { src: '/success_cp.jpg', alt: 'Success', desc: 'Success', link: '/English/Success' },
+    { src: '/happiness_cp.jpg', alt: 'Happiness', desc: 'Happiness', link: '/English/Happiness' },
+    { src: '/peace_cp.png', alt: 'Wisdom and Knowledge', desc: 'Wisdom', link: '/English/Wisdom-and-knowledge' },
+    { src: '/life_cp.jpg', alt: 'Life', desc: 'Life', link: '/English/Life' },
+    { src: '/wisdom_cp.jpg', alt: 'Peace and Solitude', desc: 'Peace', link: '/English/Peace-and-solitude' },
     
   ];
 
@@ -32,7 +32,7 @@ const English = () => {
             <a 
               key={index} 
               href={photo.link} 
-              className="w-80 h-80 relative rounded shadow-xl cursor-pointer block"
+              className="w-80 h-80 border-white relative rounded shadow-xl cursor-pointer block"
             >
               <img src={photo.src} alt={photo.alt} className="object-cover w-full h-full" />
               <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100 bg-black bg-opacity-50 text-white text-4xl font-bold">

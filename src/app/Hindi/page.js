@@ -1,72 +1,50 @@
+// src/PhotoGallery.js
 "use client"
-import React, { useState, useEffect } from 'react';
-import { RiDoubleQuotesL, RiDoubleQuotesR, RiVolumeUpLine, RiFileCopyLine, RiTwitterXLine } from 'react-icons/ri';
+import React from 'react';
+import Navbar from '../Components/Navbar';
 
 const Hindi = () => {
-    const [content, setContent] = useState("Good Things Take Time.");
-    const [author, setAuthor] = useState("Anonymous");
-    const [loading, setLoading] = useState(false);
-
-    useEffect(() => {
-        fetchQuote();
-    }, []);
-
-    const fetchQuote = () => {
-        setLoading(true);
-        fetch("https://quotify-api.vercel.app/quote/random/hindi/inspiration")
-            .then(res => {
-                if (!res.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return res.json();
-            })
-            .then(result => {
-                setContent(result.content);
-                setAuthor(result.author);
-                setLoading(false);
-            })
-            .catch(error => {
-                console.error('Error fetching quote:', error);
-                setLoading(false);
-            });
-    };
+  const photos = [
+    { src: '/Bhagvad-Gita_cp.png', alt: 'Bhagavad Gita', desc: 'Bhagavad Gita', link: '/Hindi/Bhagvad-Gita' },
+    { src: '/Ins_CP.jpg', alt: 'Inspiration', desc: 'Inspiration', link: '/Hindi/Inspiration' },
+    { src: '/Love_cp.jpg', alt: 'Love', desc: 'Love', link: '/Hindi/Love' },
+    { src: '/nature_cp.jpg', alt: 'Nature and Harmony', desc: 'Nature', link: '/Hindi/Nature-and-harmony' },
+    { src: '/friends_cp.png', alt: 'Friendship', desc: 'Friendship', link: '/Hindi/Friendship' },
+    { src: '/success_cp.jpg', alt: 'Success', desc: 'Success', link: '/Hindi/Success' },
+    { src: '/happiness_cp.jpg', alt: 'Happiness', desc: 'Happiness', link: '/Hindi/Happiness' },
+    { src: '/peace_cp.png', alt: 'Wisdom and Knowledge', desc: 'Wisdom', link: '/Hindi/Wisdom-and-knowledge' },
+    { src: '/life_cp.jpg', alt: 'Life', desc: 'Life', link: '/Hindi/Life' },
+    { src: '/wisdom_cp.jpg', alt: 'Peace and Solitude', desc: 'Peace', link: '/Hindi/Peace-and-solitude' },
     
+  ];
 
-    const readQuote = () => {
-        let utterance = new SpeechSynthesisUtterance(content);
-        speechSynthesis.speak(utterance);
-    };
+  return (
+    <div className="min-h-screen bg-[#f0f4f8] flex flex-col items-center overflow-x-hidden" style={{ backgroundImage: 'url("/EngThm_bg.jpg")', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <nav className="w-full">
+        <Navbar />
+      </nav>
 
-    return (
-        <div className="flex justify-center items-center h-screen bg-gradient-to-br from-purple-700 to-purple-500">
-            <div className="wrapper bg-white rounded-lg p-8 w-96 md:w-120">
-                <header className="text-3xl font-semibold mb-6">Quote of the Day</header>
-                <div className="content">
-                    <div className="quote-area flex justify-center items-center mb-6">
-                        <RiDoubleQuotesL className="text-xl mr-2" />
-                        <p className="quote text-lg text-center">{content}</p>
-                        <RiDoubleQuotesR className="text-xl ml-2" />
-                    </div>
-                    <div className="author flex justify-end italic text-lg">
-                        <span className="font-mono">__</span>
-                        <span className="name">{author}</span>
-                    </div>
-                </div>
-                <div className="button border-t border-black mt-5">
-                    <div className="features flex items-center justify-between mt-5">
-                        <ul className="flex">
-                            <li className="sound list-none m-0 p-0 h-12 w-12 flex items-center justify-center text-purple-500 border-2 border-purple-500 rounded-full cursor-pointer transition duration-300 hover:text-white hover:bg-purple-500" onClick={readQuote}><RiVolumeUpLine /></li>
-                            <li className="copy list-none m-0 p-0 h-12 w-12 flex items-center justify-center text-purple-500 border-2 border-purple-500 rounded-full cursor-pointer transition duration-300 hover:text-white hover:bg-purple-500"><RiFileCopyLine /></li>
-                            <li className="X list-none m-0 p-0 h-12 w-12 flex items-center justify-center text-purple-500 border-2 border-purple-500 rounded-full cursor-pointer transition duration-300 hover:text-white hover:bg-purple-500"><RiTwitterXLine /></li>
-                        </ul>
-                        <button className={`p-3 rounded-full text-white cursor-pointer text-lg ${loading ? 'bg-purple-300' : 'bg-purple-500'} hover:bg-purple-600`} onClick={fetchQuote} disabled={loading}>
-                            {loading ? 'Loading...' : 'New Quote'}
-                        </button>
-                    </div>
-                </div>
-            </div>
+      <header className="w-full text-white p-4 mt-6 mb-6">
+        <h1 className="text-center text-6xl font-bold">Themes for you</h1>
+      </header>
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {photos.map((photo, index) => (
+            <a 
+              key={index} 
+              href={photo.link} 
+              className="w-80 h-80 border-white relative rounded shadow-xl cursor-pointer block"
+            >
+              <img src={photo.src} alt={photo.alt} className="object-cover w-full h-full" />
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100 bg-black bg-opacity-50 text-white text-4xl font-bold">
+                {photo.desc}
+              </div>
+            </a>
+          ))}
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Hindi;

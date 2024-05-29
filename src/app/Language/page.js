@@ -6,7 +6,7 @@ import Navbar from '../Components/Navbar';
 const Language = () => {
   const photos = [
     { src: '/English.jpg', alt: 'Photo 1', desc: 'English', link: '/English' },
-    { src: '/Bhagvad-Gita.png', alt: 'Photo 2', desc: 'Hindi', link: '/Hindi'},
+    { src: '/Bhagvad-Gita_cp.png', alt: 'Photo 2', desc: 'Hindi', link: '/Hindi'},
     { src: '/Japanese.png', alt: 'Photo 3', desc: 'Japanese', link: '/Japanese' },
     { src: 'https://via.placeholder.com/200', alt: 'Photo 4', desc: 'English', link: '' },
     { src: 'https://via.placeholder.com/200', alt: 'Photo 5', desc: 'English', link: '' },
