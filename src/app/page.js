@@ -7,6 +7,7 @@ import Footer from './Components/Footer'
 import CardComponent from './Components/Carousal'
 import Explore from './Components/Explore'
 import ContactForm from './Components/ContactForm'
+import KeyFeatures from './Components/Features'
 
 
 
@@ -16,6 +17,7 @@ const page = () => {
       <Navbar />
       <LandingPage />
       <Approach />
+      <KeyFeatures/>
       <CardComponent/>
       <Explore/>
       <ContactForm/>

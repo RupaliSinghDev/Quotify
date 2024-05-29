@@ -35,7 +35,7 @@ const ContactForm = () => {
         initial='hidden'
         animate={controls}
         variants={formVariants}
-        className="w-96 mx-auto mt-10 p-5 bg-[#9aa9b8] shadow-lg rounded-lg transform transition duration-700 ease-in-out"
+        className="w-64 mx-auto mt-10 p-5 bg-[#9aa9b8] shadow-lg rounded-lg transform transition duration-700 ease-in-out"
       >
         <motion.h2
           className="text-2xl font-bold mb-6 text-center text-blue-900"
