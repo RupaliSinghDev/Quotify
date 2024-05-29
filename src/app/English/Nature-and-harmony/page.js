@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { RiDoubleQuotesL, RiDoubleQuotesR, RiVolumeUpLine, RiFileCopyLine, RiTwitterXLine } from 'react-icons/ri';
 
-const Hindi = () => {
+const NatureandHarmony = () => {
     const [content, setContent] = useState("Good Things Take Time.");
     const [author, setAuthor] = useState("Anonymous");
     const [loading, setLoading] = useState(false);
@@ -13,7 +13,7 @@ const Hindi = () => {
 
     const fetchQuote = () => {
         setLoading(true);
-        fetch("https://quotify-api.vercel.app/quote/random/english/love")
+        fetch("https://quotify-api.vercel.app/quote/random/english/nature and harmony")
             .then(res => {
                 if (!res.ok) {
                     throw new Error('Network response was not ok');
@@ -38,16 +38,16 @@ const Hindi = () => {
     };
 
     return (
-        <div className="flex justify-center items-center h-screen bg-gradient-to-br from-purple-700 to-purple-500">
-            <div className="wrapper bg-white rounded-lg p-8 w-96 md:w-120">
-                <header className="text-3xl font-semibold mb-6">Quote of the Day</header>
+        <div className="flex justify-center items-center h-screen" style={{backgroundImage: 'url(/Nature.jpg)', backgroundSize: 'cover'}}>
+            <div className="wrapper bg-white rounded-lg p-8" style={{ width: '600px' }}>
+                <header className="text-3xl font-bold mb-6 text-center">Quote of the Day</header>
                 <div className="content">
                     <div className="quote-area flex justify-center items-center mb-6">
-                        <RiDoubleQuotesL className="text-xl mr-2" />
-                        <p className="quote text-lg text-center">{content}</p>
+                        <RiDoubleQuotesL className="text-xl font-semibold mr-2" />
+                        <p className="quote text-lg font-semibold text-center">{content}</p>
                         <RiDoubleQuotesR className="text-xl ml-2" />
                     </div>
-                    <div className="author flex justify-end italic text-lg">
+                    <div className="author font-semibold flex justify-end italic text-lg">
                         <span className="font-mono">__</span>
                         <span className="name">{author}</span>
                     </div>
@@ -69,4 +69,4 @@ const Hindi = () => {
     );
 };
 
-export default Hindi;
+export default NatureandHarmony;
