@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { RiDoubleQuotesL, RiDoubleQuotesR, RiVolumeUpLine, RiFileCopyLine, RiTwitterXLine } from 'react-icons/ri';
 
-const English = () => {
+const NatureandHarmony = () => {
     const [content, setContent] = useState("Good Things Take Time.");
     const [author, setAuthor] = useState("Anonymous");
     const [loading, setLoading] = useState(false);
@@ -13,7 +13,7 @@ const English = () => {
 
     const fetchQuote = () => {
         setLoading(true);
-        fetch("https://quotify-api.vercel.app/quote/random/english/inspiration")
+        fetch("https://quotify-api.vercel.app/quote/random/english/nature and harmony")
             .then(res => {
                 if (!res.ok) {
                     throw new Error('Network response was not ok');
@@ -38,7 +38,7 @@ const English = () => {
     };
 
     return (
-        <div className="flex justify-center items-center h-screen" style={{backgroundImage: 'url(https://wallpapercave.com/wp/wp11917294.png)', backgroundSize: 'cover'}}>
+        <div className="flex justify-center items-center h-screen" style={{backgroundImage: 'url(/Nature.jpg)', backgroundSize: 'cover'}}>
             <div className="wrapper bg-white rounded-lg p-8" style={{ width: '600px' }}>
                 <header className="text-3xl font-bold mb-6 text-center">Quote of the Day</header>
                 <div className="content">
@@ -69,4 +69,4 @@ const English = () => {
     );
 };
 
-export default English;
+export default NatureandHarmony;

@@ -3,23 +3,27 @@
 import React from 'react';
 import Navbar from '../Components/Navbar';
 
-const Language = () => {
+const English = () => {
   const photos = [
-    { src: '/English.jpg', alt: 'Photo 1', desc: 'English', link: '/English/Themes_English' },
-    { src: '/Bhagvad-Gita.png', alt: 'Photo 2', desc: 'Hindi', link: '/Hindi' },
-    { src: '/Japanese.png', alt: 'Photo 3', desc: 'Japanese', link: '/Japanese' },
-    { src: 'https://via.placeholder.com/200', alt: 'Photo 4', desc: 'English', link: '' },
-    { src: 'https://via.placeholder.com/200', alt: 'Photo 5', desc: 'English', link: '' },
-    { src: 'https://via.placeholder.com/200', alt: 'Photo 6', desc: 'English', link: '' }
+    { src: '/Ins_CP.jpg', alt: 'Inspiration', desc: 'Inspiration', link: '/English/Inspiration' },
+    { src: '/Love_cp.jpg', alt: 'Love', desc: 'Love', link: '/English/Love' },
+    { src: '/nature_cp.jpg', alt: 'Nature and Harmony', desc: 'Nature', link: '/English/Nature-and-harmony' },
+    { src: 'https://via.placeholder.com/200', alt: 'Friendship', desc: 'Friendship', link: '/English/Friendship' },
+    { src: 'https://via.placeholder.com/200', alt: 'Success', desc: 'Success', link: '/English/Success' },
+    { src: 'https://via.placeholder.com/200', alt: 'Happiness', desc: 'Happiness', link: '/English/Happiness' },
+    { src: 'https://via.placeholder.com/200', alt: 'Wisdom and Knowledge', desc: 'Wisdom', link: '/English/Wisdom-and-knowledge' },
+    { src: 'https://via.placeholder.com/200', alt: 'Life', desc: 'Life', link: '/English/Life' },
+    { src: 'https://via.placeholder.com/200', alt: 'Peace and Solitude', desc: 'Peace', link: '/English/Peace-and-solitude' },
+    
   ];
 
   return (
-    <div className="min-h-screen bg-[#f0f4f8] flex flex-col items-center">
+    <div className="min-h-screen bg-[#f0f4f8] flex flex-col items-center overflow-x-hidden" style={{ backgroundImage: 'url("/EngThm_bg.jpg")', backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <nav className="w-full">
         <Navbar />
       </nav>
 
-      <header className="w-full text-black p-4 mt-6 mb-6">
+      <header className="w-full text-white p-4 mt-6 mb-6">
         <h1 className="text-center text-6xl font-bold">Themes for you</h1>
       </header>
       <div className="container mx-auto px-4">
@@ -28,7 +32,7 @@ const Language = () => {
             <a 
               key={index} 
               href={photo.link} 
-              className="w-80 h-80 relative rounded shadow-lg cursor-pointer block"
+              className="w-80 h-80 relative rounded shadow-xl cursor-pointer block"
             >
               <img src={photo.src} alt={photo.alt} className="object-cover w-full h-full" />
               <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100 bg-black bg-opacity-50 text-white text-4xl font-bold">
@@ -42,4 +46,4 @@ const Language = () => {
   );
 };
 
-export default Language;
+export default English;
