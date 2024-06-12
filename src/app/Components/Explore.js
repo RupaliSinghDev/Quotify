@@ -31,7 +31,6 @@ const Explore = () => {
 
   const handleClick = (cardName) => {
     setClickedCard(cardName);
-    // You can add additional logic here when a card is clicked
   };
 
   return (
@@ -47,7 +46,7 @@ const Explore = () => {
       </motion.h1>
       <div className="flex justify-center items-start w-11/12 max-w-screen-lg mx-auto space-y-8 lg:space-y-0 lg:space-x-8">
         <motion.div
-          className="w-full lg:w-1/2 h-[440px] relative" // Decreased height for the large card
+          className="w-full lg:w-1/2 h-[440px] relative" 
           initial="hidden"
           animate={controls}
           variants={cardVariants}
@@ -64,7 +63,7 @@ const Explore = () => {
         </motion.div>
         <div className="flex flex-col w-full lg:w-1/2 space-y-8 h-[400px]">
           <motion.div
-            className="flex-1 h-1/2 relative" // Adjusted height for each small card
+            className="flex-1 h-1/2 relative" 
             initial="hidden"
             animate={controls}
             variants={cardVariants}
@@ -80,7 +79,7 @@ const Explore = () => {
             </a>
           </motion.div>
           <motion.div
-            className="flex-1 h-1/2 relative" // Adjusted height for each small card
+            className="flex-1 h-1/2 relative" 
             initial="hidden"
             animate={controls}
             variants={cardVariants}

@@ -11,11 +11,13 @@ import KeyFeatures from './Components/Features'
 
 
 
+
 const page = () => {
   return (
     <div className='bg-[#837b9e]'>
       <Navbar />
       <LandingPage />
+      
       <Approach />
       <KeyFeatures/>
       <CardComponent/>

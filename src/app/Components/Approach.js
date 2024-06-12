@@ -34,7 +34,7 @@ const Approach = () => {
   return (
     <div className='bg-[#837b9e]'>
       <motion.h1
-        className='text-4xl lg:text-6xl bg-[#837b9e]font-bold text-center mt-20 mb-8 font-mono tracking-tighter'
+        className='text-4xl lg:text-6xl bg-[#837b9e]font-bold text-center mt-20 mb-8 font-serif tracking-tighter'
         initial='hidden'
         animate={controls}
         variants={headingVariants}

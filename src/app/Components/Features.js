@@ -55,7 +55,7 @@ const KeyFeatures = () => {
   return (
     <div className="bg-[#837b9e] py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-6xl font-bold mb-8 text-center text-black">Key Features</h2>
+        <h2 className="text-4xl tracking-tighter font-serif font-bold mb-8 text-center text-black">Key Features</h2>
         <motion.div
           initial="initial"
           animate="animate"
