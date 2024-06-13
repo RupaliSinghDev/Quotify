@@ -30,7 +30,7 @@ const ContactForm = () => {
             message: formData.message
         };
 
-        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams, 'YOUR_USER_ID')
+        emailjs.send('service_0vujzlg', 'template_18uz5pb', templateParams, 'fa2HZgtpTelFYpxQ3')
             .then((response) => {
                 console.log('SUCCESS!', response.status, response.text);
                 setStatus('Message sent successfully');
